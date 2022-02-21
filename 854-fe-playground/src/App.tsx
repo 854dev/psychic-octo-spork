@@ -18,7 +18,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            리액트 배우기
+            워씽 리액트 배워라 쉬먀
           </a>
           </div>
         </div>
