@@ -1,6 +1,6 @@
-import Header from "./Header";
 import React from "react";
 import wing_chun from "./wing_chun.png";
+import Header from "./Header";
 import TopNav from "TopNav";
 import Button from "components/Button";
 import DropDownFilter from "components/DropDownFilter";
@@ -35,26 +35,15 @@ function LandingPage() {
       <Button type="primary" label="버튼 테스트" onClick={console.log} />
       <Button type="secondary" label="버튼 테스트" onClick={console.log} />
       <div className="flex mb-2">
-        <DropDownFilter options={options} /> <span>에서</span>
+        <DropDownFilter options={options} columns={2} /> <span>에서</span>
       </div>
       <div className="flex mb-2">
-        <DropDownFilter options={categorys} />
+        <DropDownFilter options={categorys} columns={4} />
       </div>
       <div className="flex mb-2">
-        <DropDownFilter options={contentOptions} /> <span>BEST</span>
+        <DropDownFilter options={contentOptions} columns={3} />
+        <span>BEST</span>
       </div>
-      {/* <div className='flex justify-center'>
-              <img className='w-full px-[24%]' src={wing_chun} alt="영춘권" />
-              </div>
-              <div className="w-full text-2xl text-center text-blue-700">
-              <a
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                  워씽 리액트 배워라 쉬먀
-              </a>
-          </div> */}
     </>
   );
 }

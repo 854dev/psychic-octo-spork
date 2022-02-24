@@ -1,14 +1,14 @@
-import React from 'react'
-import logo from './logo.png'
+import React from "react";
+import logo from "./logo.png";
 
 function Header() {
   return (
     <header>
-        <div className='flex justify-center py-4'>
-            <img className='w-16' src={logo} alt="마대리랭킹로고"></img>
-        </div>
+      <div className="flex justify-center ">
+        <img className="w-16" src={logo} alt="마대리랭킹로고"></img>
+      </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

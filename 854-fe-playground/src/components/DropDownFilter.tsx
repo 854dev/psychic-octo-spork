@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import DownArrow from "../down_arrow.png";
 import Button from "./Button";
 
 interface DropDownFilterProps {
   options: { id: string; value: string }[];
+  columns: 2 | 3 | 4;
 }
 
 function DropDownFilter(props: DropDownFilterProps) {
-  const { options } = props;
+  const { options, columns } = props;
 
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const [opened, setOpened] = useState(false);
@@ -20,62 +20,81 @@ function DropDownFilter(props: DropDownFilterProps) {
   //   setOpened(false);
   // };
 
+  const Item = (id: string, value: string, columns: number, idx: number) => {
+    switch (columns) {
+      case 2:
+        return (
+          <div key={id} className={`w-1/2 flex justify-center`}>
+            <Button
+              size="lg"
+              type={idx === selectedOptionIndex ? "primary" : "secondary"}
+              label={value}
+              onClick={() => {
+                setSelectedOptionIndex(idx);
+              }}
+            />
+          </div>
+        );
+      case 3:
+        return (
+          <div key={id} className={`w-1/3 flex justify-center`}>
+            <Button
+              size="md"
+              type={idx === selectedOptionIndex ? "primary" : "secondary"}
+              label={value}
+              onClick={() => {
+                setSelectedOptionIndex(idx);
+              }}
+            />
+          </div>
+        );
+      case 4:
+        return (
+          <div key={id} className={`w-1/4 flex justify-center`}>
+            <Button
+              size="sm"
+              type={idx === selectedOptionIndex ? "primary" : "secondary"}
+              label={value}
+              onClick={() => {
+                setSelectedOptionIndex(idx);
+              }}
+            />
+          </div>
+        );
+      default:
+        return;
+    }
+  };
+
   return (
-    // <div className='flex justify-between w-20 px-1 py-2 rounded-lg flex-column bg-purple-mdr-600'>
-    //     <div className='w-full font-medium text-center text-white'>
-    //         {options[selectedOptionId].value}
-    //     </div>
-    //     <div className='flex items-center p-1'>
-    //       <img src={DownArrow} className="w-[6px] h-[3.7px]" alt="아래화살표"/>
-    //     </div>
-    // </div>]
     <div className="relative">
       <button
-        // id="dropdownButton"
-        // data-toggle="dropdown"
-        // data-dropdown-toggle="dropdown"
         className={`select-none text-white bg-purple-mdr hover:bg-purple-mdr-400 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center`}
         type="button"
         onClick={toggleOpened}
       >
         {options[selectedOptionIndex].value}
         <svg
-          className={`${
-            opened ? "rotate-180" : ""
-          } transition-all ml-2 w-4 h-4"`}
+          className={`${opened ? "" : "rotate-180"} transition-all ml-4`}
+          width="6"
+          height="4"
+          viewBox="0 0 6 4"
           fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
+            d="M5.295 3.70496L3 1.41496L0.705 3.70496L6.16331e-08 2.99996L3 -4.41313e-05L6 2.99996L5.295 3.70496Z"
+            fill="white"
+          />
         </svg>
       </button>
-
       <div
-        // id="dropdown"
         className={`${
           opened ? "" : "hidden"
-        } absolute py-1 z-10 bg-white shadow flex`}
-        // onBlur={onBlur}grid grid-cols-4 grid-flow-row
+        } absolute shadow bg-white py-4 px-2  z-10 flex flex-wrap overflow-hidden w-[360px]`}
       >
         {options.map((elem, idx) => {
-          return (
-            <div key={elem.id} className="w-1/4">
-              <Button
-                type={idx === selectedOptionIndex ? "primary" : "secondary"}
-                label={elem.value}
-                onClick={() => {
-                  setSelectedOptionIndex(idx);
-                }}
-              />
-            </div>
-          );
+          return Item(elem.id, elem.value, columns, idx);
         })}
       </div>
     </div>
