@@ -2,4 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-*{-webkit-tap-highlight-color: transparent;}
+/*===========================================================================
+	FONT
+============================================================================*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+/* @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap); */
+
+@font-face {
+  font-family: "Noto Sans KR2";
+  src: url(./static/fonts/NotoSansKR.eot);
+  src: url(./static/fonts/NotoSansKR.eot?#iefix) format("embedded-opentype"),
+    url(./static/fonts/NotoSansKR.otf) format("opentype");
+}
+
+/*===========================================================================
+	FONT
+============================================================================*/
+* {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Noto Sans KR", "Noto Sans KR2";
+}
