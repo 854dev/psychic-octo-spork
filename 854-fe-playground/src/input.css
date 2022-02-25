@@ -54,6 +54,10 @@
   font-size: 12px;
   line-height: 18px;
 }
+._text-tiny {
+  font-size: 10px;
+  line-height: 14px;
+}
 
 ._label-lg {
   font-size: 18px;
