@@ -4,6 +4,7 @@ import Header from "./Header";
 import TopNav from "TopNav";
 import Button from "components/Button";
 import DropDownFilter from "components/DropDownFilter";
+import Footer from "components/Footer";
 
 function LandingPage() {
   const options = [
@@ -44,6 +45,7 @@ function LandingPage() {
         <DropDownFilter options={contentOptions} columns={3} />
         <span>BEST</span>
       </div>
+      <Footer />
     </>
   );
 }

@@ -21,5 +21,58 @@
 * {
   -webkit-tap-highlight-color: transparent;
   font-family: "Noto Sans KR", "Noto Sans KR2";
-  /* color: #666; */
+}
+
+/*===========================================================================
+	TYPO
+============================================================================*/
+._title-lg {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+._title-md {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+._title-sm {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+}
+._text-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+._text-md {
+  font-size: 14px;
+  line-height: 21px;
+}
+._text-sm {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+._label-lg {
+  font-size: 18px;
+  line-height: 26px;
+}
+._label-md {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+._label-sm {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+}
+._label-disabled {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
 }
